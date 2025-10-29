@@ -36,9 +36,9 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
             className="h-10 w-10"
           />
           <div>
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-1">Sug‘urta kompaniyalari – Instagram tahlili</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-white mb-1">Instagram kanallari statistikasi</h1>
             <p className="text-slate-400">
-              O‘zbekiston sug‘urta kompaniyalarining Instagram’dagi faoliyati va ko‘rsatkichlari
+                 Sug‘urta kompaniyalarining instagramdagi faoliyati va ko‘rsatkichlari
             </p>
           </div>
         </div>
@@ -46,7 +46,7 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
         {/* Asosiy ko‘rsatkichlar */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           <MetricCard label="Jami obunachilar" value={stats.totalFollowers.toLocaleString()} icon="👥" />
-          <MetricCard label="O‘rtacha ER (faollik)" value={`${stats.avgEngagementRate}%`} icon="📈" />
+          <MetricCard label="O‘rtacha jalb qilish darajasi" value={`${stats.avgEngagementRate}%`} icon="📈" />
           <MetricCard label="O‘rtacha layklar" value={stats.avgLikes} icon="❤️" />
           <MetricCard
             label="Eng faol kompaniya"
