@@ -32,10 +32,10 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-6 md:p-8">
       <div className="max-w-7xl mx-auto">
-        {/* Sarlavha */}
+        {/* Sarlavha (Fix: grid + shrink-0 + min-w-0 + break-words) */}
         <div className="mb-8">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div className="flex items-center gap-3 flex-1 min-w-0">
+          <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto] items-start sm:items-center gap-4">
+            <div className="flex items-center gap-3 min-w-0">
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
                 alt="Instagram"
@@ -52,7 +52,7 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
             <img
               src="/Ahborlogo.png"
               alt="Ahbor logo"
-              className="h-12 md:h-16 w-auto object-contain max-w-[160px] shrink-0 self-start sm:self-auto"
+              className="h-10 sm:h-12 md:h-16 w-auto object-contain max-w-[160px] shrink-0 justify-self-start sm:justify-self-end"
             />
           </div>
         </div>
