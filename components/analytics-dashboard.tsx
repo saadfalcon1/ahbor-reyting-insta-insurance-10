@@ -38,7 +38,7 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
           <div>
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-1">Sug‘urta kompaniyalarining instagramdagi faoliyati va ko‘rsatkichlari</h1>
             <p className="text-slate-400">
-                Yangilangan sana: 30-oktabr 2025-yil
+                Yangilangan sana: 31-oktabr 2025-yil
             </p>
           </div>
         </div>
@@ -47,7 +47,7 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           <MetricCard label="Jami obunachilar" value={stats.totalFollowers.toLocaleString()} icon="👥" />
           <MetricCard label="O‘rtacha jalb qilish darajasi" value={`${stats.avgEngagementRate}%`} icon="📈" />
-          <MetricCard label="O‘rtacha layklar" value={stats.avgLikes} icon="❤️" />
+          <MetricCard label="O‘rtacha yoqtirishlar" value={stats.avgLikes} icon="❤️" />
           <MetricCard
             label="Eng faol kompaniya"
             value={stats.topBank.company_name}
@@ -70,8 +70,8 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
 
           <Card className="bg-slate-900/50 border-slate-800">
             <CardHeader>
-              <CardTitle className="text-white">O‘rtacha layklar va izohlar soni</CardTitle>
-              <CardDescription>Har bir nashr uchun o‘rtacha layklar va izohlar soni</CardDescription>
+              <CardTitle className="text-white">O‘rtacha yoqtirishlar va izohlar soni</CardTitle>
+              <CardDescription>Har bir nashr uchun o‘rtacha yoqtirishlar va izohlar soni</CardDescription>
             </CardHeader>
             <CardContent>
               <EngagementChart data={insuranceData} onBankClick={onBankClick} />
