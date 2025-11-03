@@ -33,7 +33,7 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
             alt="Instagram"
-            className="h-10 w-10"
+            className="h-20 w-auto"
           />
           <div>
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-1">Sug‘urta kompaniyalarining instagramdagi faoliyati va ko‘rsatkichlari</h1>
