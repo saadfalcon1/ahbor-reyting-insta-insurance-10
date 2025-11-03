@@ -41,6 +41,10 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
                 Yangilangan sana: 31-oktabr 2025-yil
             </p>
           </div>
+          <img
+              src="/Ahborlogo.png"
+              className="h-16 md:h-20 w-auto object-contain max-w-[120px] md:max-w-[160px]"
+            />
         </div>
 
         {/* Asosiy ko‘rsatkichlar */}
@@ -60,7 +64,7 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           <Card className="bg-slate-900/50 border-slate-800">
             <CardHeader>
-              <CardTitle className="text-white">Eng ko‘p obunachilarga ega kompaniyalar</CardTitle>
+              <CardTitle className="text-white">Eng ko‘p obunachiga ega top 10 kompaniyalar</CardTitle>
               <CardDescription>Instagramda eng katta auditoriyaga ega sug‘urta kompaniyalari</CardDescription>
             </CardHeader>
             <CardContent>
