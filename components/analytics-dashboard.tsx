@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { FollowersChart } from "./charts/followers-chart"
 import { EngagementChart } from "./charts/engagement-chart"
 import { EngagementRateChart } from "./charts/engagement-rate-chart"
-import { PostingFrequencyChart } from "./charts/posting-frequency-chart"
+import { PostingFrequencyChart } from "./posting-frequency-chart"
 import { BanksList } from "./banks-list"
 import { insuranceData } from "@/lib/data"
 
@@ -19,8 +19,12 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
     const avgEngagementRate = (
       insuranceData.reduce((sum, bank) => sum + bank.er_percent, 0) / insuranceData.length
     ).toFixed(2)
-    const avgLikes = (insuranceData.reduce((sum, bank) => sum + bank.avg_likes, 0) / insuranceData.length).toFixed(1)
-    const topBank = insuranceData.reduce((prev, current) => (current.followers > prev.followers ? current : prev))
+    const avgLikes = (
+      insuranceData.reduce((sum, bank) => sum + bank.avg_likes, 0) / insuranceData.length
+    ).toFixed(1)
+    const topBank = insuranceData.reduce((prev, current) =>
+      current.followers > prev.followers ? current : prev
+    )
 
     return { totalFollowers, avgEngagementRate, avgLikes, topBank }
   }, [])
@@ -29,22 +33,28 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-6 md:p-8">
       <div className="max-w-7xl mx-auto">
         {/* Sarlavha */}
-        <div className="mb-8 flex items-center space-x-3">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
-            alt="Instagram"
-            className="h-20 w-auto"
-          />
-          <div>
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-1">Sug‘urta kompaniyalarining Instagramdagi faoliyati va ko‘rsatkichlari</h1>
-            <p className="text-slate-400">
-                Yangilangan sana: 31-oktabr 2025-yil
-            </p>
-          </div>
-          <img
+        <div className="mb-8">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="flex items-center gap-3 flex-1 min-w-0">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+                alt="Instagram"
+                className="h-12 md:h-14 w-auto shrink-0"
+              />
+              <div className="min-w-0">
+                <h1 className="text-3xl md:text-4xl font-bold text-white mb-1 break-words">
+                  Sug‘urta kompaniyalarining Instagramdagi faoliyati va ko‘rsatkichlari
+                </h1>
+                <p className="text-slate-400">Yangilangan sana: 31-oktabr 2025-yil</p>
+              </div>
+            </div>
+
+            <img
               src="/Ahborlogo.png"
-              className="h-16 md:h-20 w-auto object-contain max-w-[120px] md:max-w-[160px]"
+              alt="Ahbor logo"
+              className="h-12 md:h-16 w-auto object-contain max-w-[160px] shrink-0 self-start sm:self-auto"
             />
+          </div>
         </div>
 
         {/* Asosiy ko‘rsatkichlar */}
