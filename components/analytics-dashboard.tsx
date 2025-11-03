@@ -93,7 +93,7 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
         <Card className="bg-slate-900/50 border-slate-800">
           <CardHeader>
             <CardTitle className="text-white">Barcha sug'urta kanallari</CardTitle>
-            <CardDescription>Kanal malumotlari list ko'rinishida</CardDescription>
+            <CardDescription>Kanal ma'lumotlari list ko'rinishida</CardDescription>
           </CardHeader>
           <CardContent>
             <BanksList data={insuranceData} onBankClick={onBankClick} />
