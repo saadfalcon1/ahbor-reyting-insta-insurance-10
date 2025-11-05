@@ -73,7 +73,7 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
           <MetricCard label="O'rtacha jalb qilish darajasi" value={`${stats.avgEngagementRate}%`} icon="📈" />
           <MetricCard label="Har bir nashr uchun o'rtacha yoqtirishlar va izohlar soni" value={stats.avgLikes} icon="❤️" />
           <MetricCard
-            label="Eng faol sug'urta kompaniyasi"
+            label="Eng ko'p obunachilarga ega sug'urta kompaniyasi"
             value={stats.topBank.company_name}
             icon="🏆"
             subtitle={`${stats.topBank.followers.toLocaleString()} obunachi`}
