@@ -39,7 +39,7 @@ export function FollowersChart({ data, onBankClick }: FollowersChartProps) {
         <Tooltip content={<CustomTooltip />} cursor={{ fill: "rgba(59, 130, 246, 0.1)" }} />
         <Bar
           dataKey="followers"
-          fill="#8134AF"
+          fill="#DD2A7B"
           onClick={(data) => onBankClick(data.bank)}
           cursor="pointer"
           radius={[8, 8, 0, 0]}
