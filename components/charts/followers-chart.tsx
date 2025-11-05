@@ -8,8 +8,6 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-  Cell,
-  defs,
 } from "recharts"
 import type { insuranceData } from "@/lib/data"
 
@@ -41,9 +39,12 @@ export function FollowersChart({ data, onBankClick }: FollowersChartProps) {
   }))
 
   return (
-    <div className="w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px]">
-      <ResponsiveContainer width="100%" height="100%">
-        <BarChart data={chartData} margin={{ top: 20, right: 30, left: 0, bottom: 10 }}>
+    <div className="w-full">
+      <ResponsiveContainer width="100%" height={300}>
+        <BarChart
+          data={chartData}
+          margin={{ top: 20, right: 30, left: 0, bottom: 10 }}
+        >
           {/* Instagram Gradient */}
           <defs>
             <linearGradient id="instagramGradient" x1="0" y1="0" x2="1" y2="1">
@@ -57,7 +58,10 @@ export function FollowersChart({ data, onBankClick }: FollowersChartProps) {
           <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
           <XAxis dataKey="name" stroke="#94a3b8" />
           <YAxis stroke="#94a3b8" />
-          <Tooltip content={<CustomTooltip />} cursor={{ fill: "rgba(221, 42, 123, 0.1)" }} />
+          <Tooltip
+            content={<CustomTooltip />}
+            cursor={{ fill: "rgba(221, 42, 123, 0.1)" }}
+          />
 
           <Bar
             dataKey="followers"
