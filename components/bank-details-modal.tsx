@@ -26,7 +26,7 @@ export function BankDetailsModal({ bank, onClose }: BankDetailsModalProps) {
         <CardContent className="space-y-6">
           {/* Ijtimoiy tarmoq statistikasi */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            <DetailMetric label="Obunachilar" value={bank.followers.toLocaleString()} />
+            <DetailMetric label="Obunachilar soni" value={bank.followers.toLocaleString()} />
             <DetailMetric label="Obunalar" value={bank.following.toString()} />
             <DetailMetric label="Jami nashrlar" value={bank.profile_posts_count.toString()} />
             <DetailMetric label="Tahlil qilingan oxirgi nashrlar soni" value={bank.posts_fetched.toString()} />
@@ -56,7 +56,7 @@ export function BankDetailsModal({ bank, onClose }: BankDetailsModalProps) {
 
           {/* Ish faoliyati ko‘rsatkichlari */}
           <div className="border-t border-slate-800 pt-6">
-            <h3 className="text-lg font-semibold text-white mb-4">Kanal faoliyati ko‘rsatkichlari</h3>
+            <h3 className="text-lg font-semibold text-white mb-4">Kanal ma’lumotlari</h3>
             <div className="space-y-3">
               <PerformanceBar
                 label="Jalb qilish darajasi"
