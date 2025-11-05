@@ -4,7 +4,6 @@ import { useMemo } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { FollowersChart } from "./charts/followers-chart"
 import { EngagementChart } from "./charts/engagement-chart"
-import { EngagementRateChart } from "./charts/engagement-rate-chart"
 import { PostingFrequencyChart } from "./posting-frequency-chart"
 import { BanksList } from "./banks-list"
 import { insuranceData } from "@/lib/data"
@@ -19,12 +18,8 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
     const avgEngagementRate = (
       insuranceData.reduce((sum, bank) => sum + bank.er_percent, 0) / insuranceData.length
     ).toFixed(2)
-    const avgLikes = (
-      insuranceData.reduce((sum, bank) => sum + bank.avg_likes, 0) / insuranceData.length
-    ).toFixed(1)
-    const topBank = insuranceData.reduce((prev, current) =>
-      current.followers > prev.followers ? current : prev
-    )
+    const avgLikes = (insuranceData.reduce((sum, bank) => sum + bank.avg_likes, 0) / insuranceData.length).toFixed(1)
+    const topBank = insuranceData.reduce((prev, current) => (current.followers > prev.followers ? current : prev))
 
     return { totalFollowers, avgEngagementRate, avgLikes, topBank }
   }, [])
@@ -32,38 +27,37 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-6 md:p-8">
       <div className="max-w-7xl mx-auto">
-        {/* Sarlavha (Fix: grid + shrink-0 + min-w-0 + break-words) */}
         <div className="mb-8">
-          <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto] items-start sm:items-center gap-4">
-            <div className="flex items-center gap-3 min-w-0">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] items-start md:items-center gap-4">
+            <div className="flex items-center gap-3 md:gap-3 min-w-0 order-2 md:order-1">
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
                 alt="Instagram"
-                className="h-12 md:h-14 w-auto shrink-0"
+                className="h-8 md:h-14 w-auto shrink-0"
               />
               <div className="min-w-0">
-                <h1 className="text-3xl md:text-4xl font-bold text-white mb-1 break-words">
-                  Sug‘urta kompaniyalarining Instagramdagi faoliyati va ko‘rsatkichlari
+                <h1 className="text-xl md:text-4xl font-bold text-white mb-1 break-words">
+                  Sug'urta kompaniyalarining Instagramdagi faoliyati va ko'rsatkichlari
                 </h1>
-                <p className="text-slate-400">Yangilangan sana: 31-oktabr 2025-yil</p>
+                <p className="text-slate-400 text-sm md:text-base">Yangilangan sana: 31-oktabr 2025-yil</p>
               </div>
             </div>
 
             <img
               src="/Ahborlogo.png"
               alt="Ahbor logo"
-              className="h-10 sm:h-12 md:h-16 w-auto object-contain max-w-[160px] shrink-0 justify-self-start sm:justify-self-end"
+              className="h-6 md:h-16 w-auto object-contain max-w-[120px] md:max-w-[160px] shrink-0 justify-self-start md:justify-self-end order-1 md:order-2"
             />
           </div>
         </div>
 
-        {/* Asosiy ko‘rsatkichlar */}
+        {/* Asosiy ko'rsatkichlar */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           <MetricCard label="Jami obunachilar" value={stats.totalFollowers.toLocaleString()} icon="👥" />
-          <MetricCard label="O‘rtacha jalb qilish darajasi" value={`${stats.avgEngagementRate}%`} icon="📈" />
-          <MetricCard label="O‘rtacha yoqtirishlar" value={stats.avgLikes} icon="❤️" />
+          <MetricCard label="O'rtacha jalb qilish darajasi" value={`${stats.avgEngagementRate}%`} icon="📈" />
+          <MetricCard label="Har bir nashrga o'rtacha yoqtirishlar soni" value={stats.avgLikes} icon="❤️" />
           <MetricCard
-            label="Eng faol kompaniya"
+            label="Eng faol sug'urta kompaniyasi"
             value={stats.topBank.company_name}
             icon="🏆"
             subtitle={`${stats.topBank.followers.toLocaleString()} obunachi`}
@@ -74,8 +68,8 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           <Card className="bg-slate-900/50 border-slate-800">
             <CardHeader>
-              <CardTitle className="text-white">Eng ko‘p obunachilarga ega kompaniyalar</CardTitle>
-              <CardDescription>Instagramda eng katta auditoriyaga ega sug‘urta kompaniyalari</CardDescription>
+              <CardTitle className="text-white">Eng ko'p obunachilarga ega top-10 sug'urta kompaniyalari</CardTitle>
+              <CardDescription>Instagramda eng katta auditoriyaga ega sug'urta kompaniyalari</CardDescription>
             </CardHeader>
             <CardContent>
               <FollowersChart data={insuranceData} onBankClick={onBankClick} />
@@ -84,8 +78,8 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
 
           <Card className="bg-slate-900/50 border-slate-800">
             <CardHeader>
-              <CardTitle className="text-white">O‘rtacha yoqtirishlar va izohlar soni</CardTitle>
-              <CardDescription>Har bir nashr uchun o‘rtacha yoqtirishlar va izohlar soni</CardDescription>
+              <CardTitle className="text-white">O'rtacha yoqtirishlar va izohlar soni</CardTitle>
+              <CardDescription>Har bir nashr uchun o'rtacha yoqtirishlar va izohlar soni</CardDescription>
             </CardHeader>
             <CardContent>
               <EngagementChart data={insuranceData} onBankClick={onBankClick} />
@@ -95,7 +89,7 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
           <Card className="bg-slate-900/50 border-slate-800">
             <CardHeader>
               <CardTitle className="text-white">O'rtacha nashrlar soni</CardTitle>
-              <CardDescription>Har bir kompaniya bir oyda joylaydigan nashrlar soni</CardDescription>
+              <CardDescription>Har bir kompaniyasi bir oyda joylaydigan nashrlar soni</CardDescription>
             </CardHeader>
             <CardContent>
               <PostingFrequencyChart data={insuranceData} onBankClick={onBankClick} />
@@ -103,11 +97,11 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
           </Card>
         </div>
 
-        {/* Kompaniyalar ro‘yxati */}
+        {/* Kompaniyalar ro'yxati */}
         <Card className="bg-slate-900/50 border-slate-800">
           <CardHeader>
             <CardTitle className="text-white">Barcha sug'urta kanallari</CardTitle>
-            <CardDescription>Kanal ma'lumotlari list ko'rinishida</CardDescription>
+            <CardDescription>Kanal ma'lumotlari ro'yxat ko'rinishida</CardDescription>
           </CardHeader>
           <CardContent>
             <BanksList data={insuranceData} onBankClick={onBankClick} />
