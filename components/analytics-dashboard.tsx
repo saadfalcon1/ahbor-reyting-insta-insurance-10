@@ -28,30 +28,46 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-6 md:p-8">
       <div className="max-w-7xl mx-auto">
         <div className="mb-8">
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] items-start md:items-center gap-4">
-            <div className="flex items-center gap-3 md:gap-3 min-w-0 order-2 md:order-1">
+          {/* 📱 Mobile version */}
+          <div className="flex md:hidden items-center justify-between gap-2">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+              alt="Instagram"
+              className="h-6 w-auto shrink-0"
+            />
+            <div className="min-w-0 flex-1">
+              <h1 className="text-lg font-bold text-white break-words">
+                Sug'urta kompaniyalarining Instagramdagi faoliyati va ko'rsatkichlari
+              </h1>
+              <p className="text-slate-400 text-xs">Yangilangan sana: 31-oktabr 2025-yil</p>
+            </div>
+            <img src="/Ahborlogo.png" alt="Ahbor logo" className="h-6 w-auto object-contain shrink-0" />
+          </div>
+
+          {/* 💻 Desktop version */}
+          <div className="hidden md:flex items-start md:items-center justify-between gap-4">
+            <div className="flex items-center gap-3 min-w-0 flex-1">
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
                 alt="Instagram"
-                className="h-8 md:h-14 w-auto shrink-0"
+                className="h-12 sm:h-14 md:h-20 w-auto"
               />
               <div className="min-w-0">
-                <h1 className="text-xl md:text-4xl font-bold text-white mb-1 break-words">
+                <h1 className="text-3xl md:text-4xl font-bold text-white mb-1 break-words">
                   Sug'urta kompaniyalarining Instagramdagi faoliyati va ko'rsatkichlari
                 </h1>
-                <p className="text-slate-400 text-sm md:text-base">Yangilangan sana: 31-oktabr 2025-yil</p>
+                <p className="text-slate-400">Yangilangan sana: 31-oktabr 2025-yil</p>
               </div>
             </div>
-
             <img
               src="/Ahborlogo.png"
               alt="Ahbor logo"
-              className="h-6 md:h-16 w-auto object-contain max-w-[120px] md:max-w-[160px] shrink-0 justify-self-start md:justify-self-end order-1 md:order-2"
+              className="h-10 sm:h-12 md:h-16 w-auto object-contain shrink-0 self-start md:self-auto"
             />
           </div>
         </div>
 
-        {/* Asosiy ko'rsatkichlar */}
+        {/* 📊 Asosiy ko'rsatkichlar */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           <MetricCard label="Jami obunachilar" value={stats.totalFollowers.toLocaleString()} icon="👥" />
           <MetricCard label="O'rtacha jalb qilish darajasi" value={`${stats.avgEngagementRate}%`} icon="📈" />
@@ -64,7 +80,7 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
           />
         </div>
 
-        {/* Diagrammalar */}
+        {/* 📈 Diagrammalar */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           <Card className="bg-slate-900/50 border-slate-800">
             <CardHeader>
@@ -89,7 +105,7 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
           <Card className="bg-slate-900/50 border-slate-800">
             <CardHeader>
               <CardTitle className="text-white">O'rtacha nashrlar soni</CardTitle>
-              <CardDescription>Har bir kompaniyasi bir oyda joylaydigan nashrlar soni</CardDescription>
+              <CardDescription>Har bir kompaniya bir oyda joylaydigan nashrlar soni</CardDescription>
             </CardHeader>
             <CardContent>
               <PostingFrequencyChart data={insuranceData} onBankClick={onBankClick} />
@@ -97,7 +113,7 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
           </Card>
         </div>
 
-        {/* Kompaniyalar ro'yxati */}
+        {/* 🧾 Kompaniyalar ro'yxati */}
         <Card className="bg-slate-900/50 border-slate-800">
           <CardHeader>
             <CardTitle className="text-white">Barcha sug'urta kanallari</CardTitle>
