@@ -4,7 +4,7 @@ import { useMemo } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { FollowersChart } from "./charts/followers-chart"
 import { EngagementChart } from "./charts/engagement-chart"
-import { PostingFrequencyChart } from "./posting-frequency-chart"
+import { PostingFrequencyChart } from "./charts/posting-frequency-chart"
 import { BanksList } from "./banks-list"
 import { insuranceData } from "@/lib/data"
 
