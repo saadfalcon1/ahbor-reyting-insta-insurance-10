@@ -16,16 +16,6 @@ interface AnalyticsDashboardProps {
 }
 
 const MONTHS: { key: MonthKey; label: string }[] = [
-  { key: "jan", label: "Yanvar" },
-  { key: "feb", label: "Fevral" },
-  { key: "mar", label: "Mart" },
-  { key: "apr", label: "Aprel" },
-  { key: "may", label: "May" },
-  { key: "jun", label: "Iyun" },
-  { key: "jul", label: "Iyul" },
-  { key: "aug", label: "Avgust" },
-  { key: "sep", label: "Sentabr" },
-  { key: "oct", label: "Oktabr" },
   { key: "nov", label: "Noyabr" },
   { key: "dec", label: "Dekabr" },
 ]
