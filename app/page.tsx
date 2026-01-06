@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { AnalyticsDashboard } from "@/components/analytics-dashboard"
 import { BankDetailsModal } from "@/components/bank-details-modal"
-import type { insuranceData } from "@/lib/data"
+import type { insuranceData } from "@/lib/data-dec"
 
 export default function Home() {
   const [selectedBank, setSelectedBank] = useState<(typeof insuranceData)[0] | null>(null)

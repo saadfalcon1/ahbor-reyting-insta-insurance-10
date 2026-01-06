@@ -9,7 +9,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts"
-import type { insuranceData } from "@/lib/data"
+import type { insuranceData } from "@/lib/data-dec"
 
 interface FollowersChartProps {
   data: typeof insuranceData

@@ -1,7 +1,7 @@
 "use client"
 
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts"
-import type { insuranceData } from "@/lib/data"
+import type { insuranceData } from "@/lib/data-dec"
 
 interface EngagementChartProps {
   data: typeof insuranceData

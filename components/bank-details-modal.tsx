@@ -1,7 +1,7 @@
 "use client"
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import type { insuranceData } from "@/lib/data"
+import type { insuranceData } from "@/lib/data-dec"
 import { X } from "lucide-react"
 
 interface BankDetailsModalProps {
