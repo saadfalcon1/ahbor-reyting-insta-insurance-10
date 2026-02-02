@@ -98,7 +98,7 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
             />
             <div className="min-w-0">
               <h1 className="text-3xl md:text-4xl font-bold text-white mb-1 break-words">
-                Sug&apos;urta kompaniyalarining Instagramdagi faoliyati va ko&apos;rsatkichlari
+                Sug'urta kompaniyalarining Instagramdagi faoliyati va ko'rsatkichlari
               </h1>
               <p className="text-slate-400"></p>
             </div>
@@ -142,7 +142,7 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
               icon="📈"
             />
             <MetricCard
-              label="O&apos;rtacha yoqtirishlar"
+              label="Har bir nashr uchun o'rtacha yoqtirishlar soni"
               value={stats.avgLikes}
               icon="❤️"
             />
@@ -160,9 +160,9 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
           <Card className="bg-slate-900/50 border-slate-800">
             <CardHeader>
               <CardTitle className="text-white">
-                Eng ko&apos;p obunachilarga ega top-10 sug&apos;urta kompaniyalari
+                Eng ko'p obunachilarga ega TOP-10 sug'urta kompaniyalari
               </CardTitle>
-              <CardDescription>Tanlangan oy bo'yicha</CardDescription>
+              <CardDescription>Instagramda eng katta auditoriyaga ega banklar</CardDescription>
             </CardHeader>
             <CardContent>
               <FollowersChart data={insuranceData} onBankClick={onBankClick} />
@@ -172,9 +172,9 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
           <Card className="bg-slate-900/50 border-slate-800">
             <CardHeader>
               <CardTitle className="text-white">
-                O&apos;rtacha yoqtirishlar va izohlar soni
+                O'rtacha yoqtirishlar va o'rtacha izohlar soni
               </CardTitle>
-              <CardDescription>Har bir nashr uchun</CardDescription>
+              <CardDescription>Har bir nashr uchun o'rtacha yoqtirishlar va o'rtacha izohlar soni</CardDescription>
             </CardHeader>
             <CardContent>
               <EngagementChart data={insuranceData} onBankClick={onBankClick} />
@@ -184,9 +184,9 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
           <Card className="bg-slate-900/50 border-slate-800">
             <CardHeader>
               <CardTitle className="text-white">
-                O&apos;rtacha nashrlar soni
+                O'rtacha nashrlar soni
               </CardTitle>
-              <CardDescription>Oy davomida</CardDescription>
+              <CardDescription>Har bir bank tomonidan bir oyda joylashtirilgan nashrlar soni</CardDescription>
             </CardHeader>
             <CardContent>
               <PostingFrequencyChart data={insuranceData} onBankClick={onBankClick} />
@@ -198,7 +198,7 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
         <Card className="bg-slate-900/50 border-slate-800">
           <CardHeader>
             <CardTitle className="text-white">Barcha sug&apos;urta kanallari</CardTitle>
-            <CardDescription>Tanlangan oy bo'yicha</CardDescription>
+            <CardDescription>Kanal ma'lumotlari ro'yxat ko'rinishida</CardDescription>
           </CardHeader>
           <CardContent>
             <BanksList data={insuranceData} onBankClick={onBankClick} />
