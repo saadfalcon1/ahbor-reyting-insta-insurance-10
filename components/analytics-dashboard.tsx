@@ -162,7 +162,7 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
               <CardTitle className="text-white">
                 Eng ko'p obunachilarga ega TOP-10 sug'urta kompaniyalari
               </CardTitle>
-              <CardDescription>Instagramda eng katta auditoriyaga ega banklar</CardDescription>
+              <CardDescription>Instagramda eng katta auditoriyaga ega sug'urta kompaniyalari</CardDescription>
             </CardHeader>
             <CardContent>
               <FollowersChart data={insuranceData} onBankClick={onBankClick} />
@@ -186,7 +186,7 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
               <CardTitle className="text-white">
                 O'rtacha nashrlar soni
               </CardTitle>
-              <CardDescription>Har bir bank tomonidan bir oyda joylashtirilgan nashrlar soni</CardDescription>
+              <CardDescription>Har bir sug'urta kompaniya tomonidan bir oyda joylashtirilgan o'rtacha nashrlar soni</CardDescription>
             </CardHeader>
             <CardContent>
               <PostingFrequencyChart data={insuranceData} onBankClick={onBankClick} />
