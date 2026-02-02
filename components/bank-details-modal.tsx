@@ -26,50 +26,50 @@ export function BankDetailsModal({ bank, onClose }: BankDetailsModalProps) {
         <CardContent className="space-y-6">
           {/* Ijtimoiy tarmoq statistikasi */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            <DetailMetric label="Obunachilar soni" value={bank.followers.toLocaleString()} />
-            <DetailMetric label="Obunalar" value={bank.following.toString()} />
-            <DetailMetric label="Jami nashrlar" value={bank.profile_posts_count.toString()} />
-            <DetailMetric label="Tahlil qilingan oxirgi nashrlar soni" value={bank.posts_fetched.toString()} />
-            <DetailMetric label="Har bir nashr uchun o‘rtacha yoqtirishlar soni" value={bank.avg_likes.toFixed(1)} />
-            <DetailMetric label="Har bir nashr uchun o‘rtacha izohlar soni" value={bank.avg_comments.toFixed(1)} />
+            <DetailMetric label="Obunachilar soni" value={(bank.followers ?? 0).toLocaleString()} />
+            <DetailMetric label="Obunalar" value={(bank.following ?? 0).toString()} />
+            <DetailMetric label="Jami nashrlar" value={(bank.profile_posts_count ?? 0).toString()} />
+            <DetailMetric label="Tahlil qilingan oxirgi nashrlar soni" value={(bank.posts_fetched ?? 0).toString()} />
+            <DetailMetric label="Har bir nashr uchun o'rtacha yoqtirishlar soni" value={(bank.avg_likes ?? 0).toFixed(1)} />
+            <DetailMetric label="Har bir nashr uchun o'rtacha izohlar soni" value={(bank.avg_comments ?? 0).toFixed(1)} />
           </div>
 
           {/* Faollik tahlili */}
           <div className="border-t border-slate-800 pt-6">
             <h3 className="text-lg font-semibold text-white mb-4">Faollik tahlili</h3>
             <div className="space-y-3">
-              <AnalysisRow label="O‘rtacha oylik nashrlar soni" value={bank.posts_per_month.toFixed(1)} color="green" />
-              <AnalysisRow label="Obunachilar soni" value={`${(bank.followers / 1000).toFixed(1)}K`} color="purple" />
+              <AnalysisRow label="O'rtacha oylik nashrlar soni" value={(bank.posts_per_month ?? 0).toFixed(1)} color="green" />
+              <AnalysisRow label="Obunachilar soni" value={`${((bank.followers ?? 0) / 1000).toFixed(1)}K`} color="purple" />
             </div>
           </div>
 
-          {/* Kanal haqida ma’lumot */}
+          {/* Kanal haqida ma'lumot */}
           <div className="border-t border-slate-800 pt-6">
-            <h3 className="text-lg font-semibold text-white mb-4">Kanal haqida ma’lumot</h3>
+            <h3 className="text-lg font-semibold text-white mb-4">Kanal haqida ma'lumot</h3>
             <div className="space-y-2 text-sm">
-              <InfoRow label="Kanal yaratilgan sana" value={bank.channel_created_date} />
-              <InfoRow label="So‘nggi yangilanish" value={bank.last_updated_date} />
-              <InfoRow label="Foydalanuvchi nomi" value={`@${bank.username}`} />
+              <InfoRow label="Kanal yaratilgan sana" value={bank.channel_created_date ?? 'N/A'} />
+              <InfoRow label="So'nggi yangilanish" value={bank.last_updated_date ?? 'N/A'} />
+              <InfoRow label="Foydalanuvchi nomi" value={`@${bank.username ?? 'unknown'}`} />
             </div>
           </div>
 
-          {/* Ish faoliyati ko‘rsatkichlari */}
+          {/* Ish faoliyati ko'rsatkichlari */}
           <div className="border-t border-slate-800 pt-6">
-            <h3 className="text-lg font-semibold text-white mb-4">Kanal ma’lumotlari</h3>
+            <h3 className="text-lg font-semibold text-white mb-4">Kanal ma'lumotlari</h3>
             <div className="space-y-3">
               <PerformanceBar
                 label="Jalb qilish darajasi"
-                value={Math.min(100, bank.er_percent * 10)}
+                value={Math.min(100, (bank.er_percent ?? 0) * 10)}
                 color="from-blue-500 to-cyan-500"
               />
               <PerformanceBar
                 label="Kontent faolligi"
-                value={Math.min(100, (bank.posts_per_month / 30) * 100)}
+                value={Math.min(100, ((bank.posts_per_month ?? 0) / 30) * 100)}
                 color="from-green-500 to-emerald-500"
               />
               <PerformanceBar
                 label="Auditoriya qamrovi"
-                value={Math.min(100, (bank.followers / 20000) * 100)}
+                value={Math.min(100, ((bank.followers ?? 0) / 20000) * 100)}
                 color="from-purple-500 to-pink-500"
               />
             </div>

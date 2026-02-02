@@ -137,7 +137,7 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
               icon="👥"
             />
             <MetricCard
-              label="Obunachilar o'sishi (oy bo'yicha)"
+              label="Obunachilar o‘sishi (oylik)"
               value={stats.followersDiff.toLocaleString()}
               icon="📈"
             />
@@ -147,7 +147,7 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
               icon="❤️"
             />
             <MetricCard
-              label="Eng ko&apos;p obunachili kompaniya"
+              label="Eng ko‘p obunachiga ega kompaniya"
               value={stats.topBank.company_name}
               icon="🏆"
               subtitle={`${stats.topBank.followers.toLocaleString()} obunachi`}
@@ -174,7 +174,7 @@ export function AnalyticsDashboard({ onBankClick }: AnalyticsDashboardProps) {
               <CardTitle className="text-white">
                 O&apos;rtacha yoqtirishlar va izohlar soni
               </CardTitle>
-              <CardDescription>Har bir post uchun</CardDescription>
+              <CardDescription>Har bir nashr uchun</CardDescription>
             </CardHeader>
             <CardContent>
               <EngagementChart data={insuranceData} onBankClick={onBankClick} />
